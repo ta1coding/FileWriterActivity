@@ -48,4 +48,16 @@ public class MyFileWriter {
         File file = new File(fileName);
         System.out.println(file.length());
        }
+
+       private static long fileSize(String fileName) {
+        File file = new File(fileName);
+        return file.length();
+       }
+
+    private static void printTotalFileSize(String... fileNames) {
+        long length = 0;
+        for (String file : fileNames) 
+            length += fileSize(file);
+        System.out.println("Total size of all files: " + length + " bytes");
+    }
 }
