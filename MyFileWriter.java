@@ -60,4 +60,14 @@ public class MyFileWriter {
             length += fileSize(file);
         System.out.println("Total size of all files: " + length + " bytes");
     }
+    private static void printTotalFileSize2(String... fileNames) {
+        long totalSize = 0;
+        for (String fileName : fileNames) {
+            File file = new File(fileName);
+            if (file.exists()) {
+                totalSize += file.length();
+            }
+        }
+        System.out.println("Total size of all files: " + totalSize + " bytes");
+    }
 }
